@@ -8,13 +8,16 @@ The processed data is saved in the database and returned to the user's page for 
 
 1. Price parsing service
    Description of work:
-
+   
+The user registers by entering an email and a link.
+A confirmation of registration is sent to the email.
 The user clicks the "Get Price" button.
 The browser sends a request to the controller via Laravel routing.
 The controller calls the ParseService service, which:
 Receives a list of users.
 For each user, parses data from external links.
 Saves updated data to the database.
+If the data has changed, the user is sent a letter with a new price.
 After parsing is complete, the data is returned to the user and displayed on the page.
 
 2.1 Data flow diagram:
